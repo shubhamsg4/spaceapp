@@ -1,5 +1,3 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin=require("mini-css-extract-plugin");
 
 module.exports = {
