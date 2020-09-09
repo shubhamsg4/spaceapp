@@ -1,0 +1,2 @@
+export const SPACEDATA='NAVDATA';
+export const SPACEDATA_ERROR='NAVDATA_ERROR';
