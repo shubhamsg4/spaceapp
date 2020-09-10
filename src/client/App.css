@@ -119,11 +119,6 @@
   background-color:#228B22
 }
 
-.submit-button:hover{
-  background-color:#228B22
-}
-
-
 
 .year-button{
   width:70px;
@@ -261,4 +256,9 @@ width: 90%;
   text-align:center;
   background-color: #D3D3D3; 
   padding:8px 0px;
+}
+
+.title{
+  padding:10px 10px;
+  background-color: #D3D3D3; 
 }

@@ -7,6 +7,7 @@ const Header = () => {
 
   return (
       <div>
+      <h1 className="title">SpaceX Launch Programs</h1>
         <Link to="/">
         </Link>
       </div>

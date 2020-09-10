@@ -18,33 +18,24 @@ const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
   }, []);
 
   const yearInput = (e) => {
-    debugger;
-    console.log("start");
     e.preventDefault();
-    e.target.style.backgroundColor = "green";
-    console.log(formData.launch_year);
-    setFormData({ ...formData, launch_year: e.target.value });
-    spaceValues(formData);
-    console.log(formData.launch_year);
+      let newFormData = { ...formData, launch_year: e.target.value };
+    setFormData(newFormData);
+    spaceValues(newFormData);
   }
 
    const launchSuccess = (e) => {
       e.preventDefault();
-     setFormData({ ...formData, launch_success: e.target.value });
-     spaceValues(formData);
-     console.log(formData);
+     let newFormData={ ...formData, launch_success: e.target.value };
+     setFormData(newFormData);
+     spaceValues(newFormData);
    };
     const landSuccess = (e) => {
        e.preventDefault();
-      setFormData({ ...formData, land_success: e.target.value });
-      spaceValues(formData);
-      console.log(formData);
+      let newFormData={ ...formData, land_success: e.target.value };
+      setFormData(newFormData);
+      spaceValues(newFormData);
     };
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-  //   spaceValues(formData);
-  // };
   return (
     <Fragment>
       <div className="screen-size">
@@ -57,105 +48,105 @@ const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
               <button
                 className="year-button"
                 value="2006"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2006
               </button>
               <button
                 className="year-button span-data-right"
                 value="2007"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2007
               </button>
               <button
                 className="year-button"
                 value="2008"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2008
               </button>
               <button
                 className="year-button span-data-right"
                 value="2009"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2009
               </button>
               <button
                 className="year-button "
                 value="2010"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2010
               </button>
               <button
                 className="year-button"
                 value="2011"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2011
               </button>
               <button
                 className="year-button"
                 value="2012"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2012
               </button>
               <button
                 className="year-button"
                 value="2013"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2013
               </button>
               <button
                 className="year-button"
                 value="2014"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2014
               </button>
               <button
                 className="year-button"
                 value="2015"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2015
               </button>
               <button
                 className="year-button"
                 value="2016"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2016
               </button>
               <button
                 className="year-button"
                 value="2017"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2017
               </button>
               <button
                 className="year-button"
                 value="2018"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2018
               </button>
               <button
                 className="year-button"
                 value="2019"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2019
               </button>
               <button
                 className="year-button"
                 value="2020"
-                onClick={(e) => yearInput(e, "value")}
+                onClick={yearInput}
               >
                 2020
               </button>
@@ -165,14 +156,14 @@ const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
             <button
               className="year-button"
               value="true"
-              onClick={(e) => launchSuccess(e, "value")}
+              onClick={launchSuccess}
             >
               True
             </button>
             <button
               className="year-button span-data-right"
               value="false"
-              onClick={(e) => launchSuccess(e, "value")}
+              onClick={launchSuccess}
             >
               False
             </button>
@@ -182,23 +173,18 @@ const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
               <button
                 className="year-button span-data-left"
                 value="true"
-                onClick={(e) => landSuccess(e, "value")}
+                onClick={landSuccess}
               >
                 True
               </button>
               <button
                 className="year-button span-data-right"
                 value="false"
-                onClick={(e) => landSuccess(e, "value")}
+                onClick={landSuccess}
               >
                 False
               </button>
             </div>
-            {/* <div className="submit-button">
-              <button className="button-color" onClick={(e) => onSubmit(e)}>
-                Apply Filters
-              </button>
-            </div> */}
           </div>
           <div className="horizontal-flex">
             {spaceData.length > 0 ? (
