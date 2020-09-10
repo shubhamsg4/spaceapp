@@ -7,33 +7,44 @@ import SapceCard from "./SapceCard";
 
 
 const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
+ const [formData, setFormData] = useState({
+   launch_year: "",
+   land_success: "",
+   launch_success: "",
+ });
+ 
   useEffect(() => {
     spaceValues();
-  }, [spaceValues]);
-  const [formData, setFormData] = useState({
-    launch_year: "",
-    land_success: "",
-    launch_success: "",
-  });
+  }, []);
 
-  const yearInput = (e) =>{
+  const yearInput = (e) => {
+    debugger;
+    console.log("start");
+    e.preventDefault();
+    e.target.style.backgroundColor = "green";
+    console.log(formData.launch_year);
     setFormData({ ...formData, launch_year: e.target.value });
-    console.log(formData);
+    spaceValues(formData);
+    console.log(formData.launch_year);
   }
 
    const launchSuccess = (e) => {
+      e.preventDefault();
      setFormData({ ...formData, launch_success: e.target.value });
+     spaceValues(formData);
      console.log(formData);
    };
     const landSuccess = (e) => {
+       e.preventDefault();
       setFormData({ ...formData, land_success: e.target.value });
+      spaceValues(formData);
       console.log(formData);
     };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    spaceValues(formData);
-  };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+  //   spaceValues(formData);
+  // };
   return (
     <Fragment>
       <div className="screen-size">
@@ -183,11 +194,11 @@ const FiltersPage = ({ spaceValues, spacedata: { spaceData, loading } }) => {
                 False
               </button>
             </div>
-            <div className="submit-button">
+            {/* <div className="submit-button">
               <button className="button-color" onClick={(e) => onSubmit(e)}>
                 Apply Filters
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="horizontal-flex">
             {spaceData.length > 0 ? (
